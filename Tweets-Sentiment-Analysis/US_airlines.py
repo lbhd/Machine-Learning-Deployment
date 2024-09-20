@@ -23,7 +23,7 @@ def main():
     st.sidebar.subheader("By [Andrew Liang](https://github.com/lbhd)")
     st.markdown("""---""")
     
-    st.sidebar.markdown("[![ISSUE](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/lbhd/Machine-Learning-Deployment/tree/main/Tweets%20Sentiment%20Analysis)")
+    st.sidebar.markdown("[![ISSUE](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/lbhd/Machine-Learning-Deployment/tree/main/Tweets-Sentiment-Analysis)")
     st.subheader("A data-driven customer sentiment analysis web application on major U.S. airlines"
                  )
     st.sidebar.markdown("An exploratory sentiment analysis job based on tweets from U.S. airlines")
