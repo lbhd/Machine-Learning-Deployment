@@ -30,8 +30,7 @@ def main():
 
     @st.cache(persist=True)
     def load_data():
-        url = 'https://raw.githubusercontent.com/lbhd/Machine-Learning-Deployment/main/Tweets-Sentiment-Analysis/Tweets.csv'
-        data = pd.read_csv(url, index_col=0)
+        data = pd.read_csv("tweets.csv")
         data["tweet_created"] = pd.to_datetime(data["tweet_created"])
         return data
 
@@ -128,26 +127,37 @@ def main():
     
 
   
-    st.sidebar.header("Word Cloud")
-    word_sentiment = st.sidebar.radio('Select sentiment type for word cloud', ('positive', 'neutral', 'negative'))
-    #st.set_option('deprecation.showPyplotGlobalUse', False)
-    if not st.sidebar.checkbox("Hide", False, key=6):
-        st.subheader('Word cloud for %s sentiment' % (word_sentiment))
-        cleaned_data = data[data['airline_sentiment']==word_sentiment].text.apply(clean_text).apply(clean_stopword).apply(tokenize)
+    # st.sidebar.header("Word Cloud")
+    # word_sentiment = st.sidebar.radio('Select sentiment type for word cloud', ('positive', 'neutral', 'negative'))
+    # st.set_option('deprecation.showPyplotGlobalUse', False)
+    # if not st.sidebar.checkbox("Hide", False, key=6):
+    #     st.subheader('Word cloud for %s sentiment' % (word_sentiment))
+    #     cleaned_data = data[data['airline_sentiment']==word_sentiment].text.apply(clean_text).apply(clean_stopword).apply(tokenize)
         
-        cleaned_data = [" ".join(cleaned_data.values[i]) for i in range(len(cleaned_data))]
-        cleaned_data = [" ".join(cleaned_data)][0]
+    #     cleaned_data = [" ".join(cleaned_data.values[i]) for i in range(len(cleaned_data))]
+    #     cleaned_data = [" ".join(cleaned_data)][0]
 
 
        
-        wordcloud = WordCloud(stopwords=STOPWORDS, background_color='white', width=800, height=650).generate(cleaned_data)
+    #     wordcloud = WordCloud(stopwords=STOPWORDS, background_color='white', width=800, height=650).generate(cleaned_data)
+    #     plt.imshow(wordcloud)
+    #     plt.xticks([])
+    #     plt.yticks([])
+    #     st.pyplot()
+
+
+    word_sentiment = st.sidebar.radio('Select sentiment type for word cloud', ('positive', 'neutral', 'negative'))
+    #st.set_option('deprecation.showPyplotGlobalUse', False)
+    if not st.sidebar.checkbox("Hide", True, key=6):
+        st.subheader('Word cloud for %s sentiment' % (word_sentiment))
+        df = data[data['airline_sentiment']==word_sentiment]
+        words = ' '.join(df['text'])
+        processed_words = ' '.join([word for word in words.split() if 'http' not in word and not word.startswith('@') and word != 'RT'])
+        wordcloud = WordCloud(stopwords=STOPWORDS, background_color='white', width=800, height=640).generate(processed_words)
         plt.imshow(wordcloud)
         plt.xticks([])
         plt.yticks([])
         st.pyplot()
-
-
-
             
  
     
