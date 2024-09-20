@@ -1,0 +1,8 @@
+streamlit
+matplotlib
+numpy
+plotly
+wordcloud
+nltk
+re
+pandas
