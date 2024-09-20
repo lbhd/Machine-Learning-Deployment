@@ -30,7 +30,8 @@ def main():
 
     @st.cache(persist=True)
     def load_data():
-        data = pd.read_csv("tweets.csv")
+        url = 'https://raw.githubusercontent.com/lbhd/Machine-Learning-Deployment/main/Tweets-Sentiment-Analysis/Tweets.csv'
+        data = pd.read_csv(url, index_col=0)
         data["tweet_created"] = pd.to_datetime(data["tweet_created"])
         return data
 
