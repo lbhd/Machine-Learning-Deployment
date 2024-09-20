@@ -149,7 +149,7 @@ def main():
 
     word_sentiment = st.sidebar.radio('Select sentiment type for word cloud', ('positive', 'neutral', 'negative'))
     #st.set_option('deprecation.showPyplotGlobalUse', False)
-    if not st.sidebar.checkbox("Hide", False, key=6):
+    if not st.sidebar.checkbox("Hide", True, key=6):
         st.subheader('Word cloud for %s sentiment' % (word_sentiment))
         df = data[data['airline_sentiment']==word_sentiment]
         words = ' '.join(df['text'])
