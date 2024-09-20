@@ -130,7 +130,7 @@ def main():
   
     st.sidebar.header("Word Cloud")
     word_sentiment = st.sidebar.radio('Select sentiment type for word cloud', ('positive', 'neutral', 'negative'))
-    st.set_option('deprecation.showPyplotGlobalUse', False)
+    #st.set_option('deprecation.showPyplotGlobalUse', False)
     if not st.sidebar.checkbox("Hide", False, key=6):
         st.subheader('Word cloud for %s sentiment' % (word_sentiment))
         cleaned_data = data[data['airline_sentiment']==word_sentiment].text.apply(clean_text).apply(clean_stopword).apply(tokenize)
