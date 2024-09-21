@@ -14,3 +14,15 @@ Using Python and Streamlit, we built an interactive web app that allows users to
 - Plotting Number of Tweets by Sentiment for Each Airline
 - Displaying Reasons for Negative Tweets
 - Word Cloud for Positive, Neutral, and Negative Tweets
+
+## How to run it ?
+
+- Click on the 'Open in Streamlit' icon on the top of this page to access the app in Streamlit cloud
+- Or,clone this repo to your system and in the terminal enter:
+   ```
+    $ streamlit run US_airlines.py
+    ```
+    
+
+
+
