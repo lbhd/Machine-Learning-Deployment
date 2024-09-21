@@ -1,1 +1,2 @@
-[![Open app in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)]([https://share.streamlit.io/prathameshthakur/sentiment-analysis/app.py](https://machine-learning-deployment-d7hunnkk6zqtcdfiu3ugka.streamlit.app/)
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://machine-learning-deployment-d7hunnkk6zqtcdfiu3ugka.streamlit.app)
+
